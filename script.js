@@ -9,8 +9,14 @@ for (let i = 1; i < 257; i++) {
     e.target.classList.add('my-colour-class');
   });
 
+  // Permanent hover effect
   containerDiv.appendChild(div);
 }
-  // Permanent hover effect
+
+const gridBtn = document.querySelector('button');
+gridBtn.addEventListener('click', (e) => {
+
+});
+
 
 
