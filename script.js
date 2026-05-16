@@ -4,11 +4,12 @@ const containerDiv = document.querySelector('.container');
 for (let i = 1; i < 257; i++) {
   const div = document.createElement('div');
   div.className = "grid-item";
-  containerDiv.appendChild(div);
 
   div.addEventListener('mouseover', (e) => {
     e.target.classList.add('my-colour-class');
   });
+
+  containerDiv.appendChild(div);
 }
   // Permanent hover effect
 

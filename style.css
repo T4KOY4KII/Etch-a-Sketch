@@ -62,6 +62,6 @@ body{
     text-align: center;
 }
 
-.my-colour-class{
+.container > div.my-colour-class{
     background-color: black;
 }
