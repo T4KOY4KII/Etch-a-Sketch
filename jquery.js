@@ -1,24 +1,55 @@
-const containerDiv = document.querySelector('.container');
+let rows, cols = 16;
 
-// Making the initial grid Add 16 divs
-for (let i = 1; i < 257; i++) {
-  const div = document.createElement('div');
-  div.className = "grid-item";
-  
-  // For coloring the grid
-  div.addEventListener('mouseover', (e) => {
-    e.target.classList.add('my-colour-class');
-  });
+document.write("<table>");
+for(i = 0; i < rows; i++){
+  document.write("<tr>");
+  for(j = 0; j < cols; j++){
+    document.write("<td>"+"</td>");
+  }
+  document.write("</tr>");
+}
+document.write("</table>");
 
-  // Permanent hover effect
-  containerDiv.appendChild(div);
+$( "td").css("color", "red");
+
+$(document).ready(function() {
+  grid(16,16);
+});
+
+$(" .button").click(function() {
+  let size = prompt("Please select your grid size");
+  grid(size, size);
+});
+
+function grid(rows, cols){
+  let table = "<table>";
+  let size = (1 / rows * 525) + "px";
+
+  for(i = 0; i < rows; i++){
+    table += "<tr>";
+    for(j = 0; j < cols; j++){
+      table += "<td>"+"</td>";
+    }
+    table += "</tr>";
+  }
+  table += "</table>";
+
+  if(rows > 100 || cols > 100){
+    alert("Grid size cannot exceed 100 x 100");
+    return;
+  }
+
+  $(".container").empty().append(table);
+  $("tr").css("height", size);
+  $("td").css("color","black").css("width", size);
 }
 
-// Changing the grid size //
-const gridBtn = document.querySelector('button');
-gridBtn.addEventListener('click', (e) => {
-
+$(".container").on("mouseenter", "td", function() {
+  $(this).addClass("my-color-class");
 });
+  
+
+
 
 
 
